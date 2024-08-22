@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <title>Algoritmo de Dijkstra</title>
+</head>
+<body>
+    <h1>Algoritmo de Dijkstra</h1>
+
+    <div class="container">
+        <h2>Importar/Exportar Grafo</h2>
+        <button class="importa" onclick="exportarGrafo()">Exportar Grafo</button>
+        <button class="importa"><label for="importFile" id="nao">Escolher Arquivo</label></button>
+        <input type="file" id="importFile">
+        <button class="importa" onclick="importarGrafo()">Importar Grafo</button>
+    </div>
+
+    <div class="container">
+        <h2>Adicionar Vértice</h2>
+        <label for="vertexName">Nome do Vértice:</label>
+        <input type="text" id="vertexName">
+        <button onclick="adicionarVertice()">Adicionar Vértice</button>
+    </div>
+
+    <div class="container">
+        <h2>Lista de Vértices</h2>
+        <ul id="vertexList"></ul>
+    </div>
+
+    <div class="container">
+        <h2>Adicionar Aresta</h2>
+        <label for="fromVertex">Vértice De:</label>
+        <input type="text" id="fromVertex">
+        <label for="toVertex">Vértice Para:</label>
+        <input type="text" id="toVertex">
+        <label for="weight">Peso:</label>
+        <input type="number" id="weight" step="0.01">
+        <button onclick="adicionarAresta()">Adicionar Aresta</button>
+    </div>
+
+    <div class="container">
+        <h2>Lista de Arestas</h2>
+        <ul id="edgeList"></ul>
+    </div>
+
+    <div class="container">
+        <h2>Executar Dijkstra</h2>
+        <label for="startVertex">Vértice Inicial:</label>
+        <input type="text" id="startVertex">
+        <label for="endVertex">Vértice Final:</label>
+        <input type="text" id="endVertex">
+        <button onclick="executarDijkstra()">Executar</button>
+    </div>
+
+    <div class="container">
+        <h2>Resultados</h2>
+        <pre id="results"></pre>
+    </div>
+
+    <div class="container">
+        <h2>Todos os Caminhos</h2>
+        <pre id="allPaths"></pre>
+    </div>
+
+    <div class="container">
+        <h2>Caminho Mais Curto</h2>
+        <pre id="shortestPath"></pre>
+    </div>
+
+    <script src="dijkstra.js"></script>
+</body>
+</html>

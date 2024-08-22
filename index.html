@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Dijkstra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label, input, button {
+            display: block;
+            margin: 10px 0;
+        }
+        #vertexList, #edgeList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #vertexList li, #edgeList li {
+            margin: 5px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algoritmo de Dijkstra</h1>
+
+    <h2>Adicionar Vértice</h2>
+    <label for="vertexName">Nome do Vértice:</label>
+    <input type="text" id="vertexName">
+    <button onclick="adicionarVertice()">Adicionar Vértice</button>
+
+    <h2>Adicionar Aresta</h2>
+    <label for="fromVertex">Vértice De:</label>
+    <input type="text" id="fromVertex">
+    <label for="toVertex">Vértice Para:</label>
+    <input type="text" id="toVertex">
+    <label for="weight">Peso:</label>
+    <input type="number" id="weight" step="0.01">
+    <button onclick="adicionarAresta()">Adicionar Aresta</button>
+
+    <h2>Executar Dijkstra</h2>
+    <label for="startVertex">Vértice Inicial:</label>
+    <input type="text" id="startVertex">
+    <label for="endVertex">Vértice Final:</label>
+    <input type="text" id="endVertex">
+    <button onclick="executarDijkstra()">Executar</button>
+
+    <h2>Resultados</h2>
+    <pre id="results"></pre>
+
+    <h2>Todos os Caminhos</h2>
+    <pre id="allPaths"></pre>
+
+    <h2>Caminho Mais Curto</h2>
+    <pre id="shortestPath"></pre>
+
+    <h2>Lista de Vértices</h2>
+    <ul id="vertexList"></ul>
+
+    <h2>Lista de Arestas</h2>
+    <ul id="edgeList"></ul>
+
+    <h2>Importar/Exportar Grafo</h2>
+    <button onclick="exportarGrafo()">Exportar Grafo</button>
+    <input type="file" id="importFile">
+    <button onclick="importarGrafo()">Importar Grafo</button>
+
+    <script src="dijkstra.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "RIO DO SUL": {
+      "TROMBUDO CENTRAL": 42.00,
+      "POUSO REDONDO": 102.00,
+      "LAURENTINO": 28.00,
+      "RIO DO OESTE": 20.00,
+      "LONTRAS": 13.00,
+      "MIRIM DOCE": 81.00
+  },
+  "TROMBUDO CENTRAL": {
+      "RIO DO SUL": 42.00,
+      "IBIRAMA": 92.00,
+      "TAIO": 76.00,
+      "ITUPORANGA": 135.00,
+      "POUSO REDONDO": 38.00
+  },
+  "MIRIM DOCE": {
+      "RIO DO SUL": 81.00,
+      "LONTRAS": 297.00,
+      "VIDAL RAMOS": 327.00,
+      "AGRONOMICA": 132.00,
+      "AGROLANDIA": 76.50
+  },
+  "RIO DO OESTE": {
+      "RIO DO SUL": 20.00,
+      "WITMARSUM": 111.00,
+      "IBIRAMA": 92.00,
+      "LONTRAS": 66.00
+  },
+  "POUSO REDONDO": {
+      "RIO DO SUL": 102.00,
+      "LAURENTINO": 99.00,
+      "SALETE": 39.00
+  },
+  "SALETE": {
+      "POUSO REDONDO": 39.00,
+      "ITUPORANGA": 97.00,
+      "AGROLANDIA": 106.50
+  },
+  "IBIRAMA": {
+      "TROMBUDO CENTRAL": 92.00,
+      "RIO DO OESTE": 92.00,
+      "TAIO": 158.00
+  },
+  "TAIO": {
+      "TROMBUDO CENTRAL": 76.00,
+      "IBIRAMA": 158.00
+  },
+  "ITUPORANGA": {
+      "TROMBUDO CENTRAL": 135.00,
+      "SALETE": 97.00
+  },
+  "LONTRAS": {
+      "RIO DO SUL": 13.00,
+      "MIRIM DOCE": 297.00,
+      "RIO DO OESTE": 66.00
+  },
+  "VIDAL RAMOS": {
+      "MIRIM DOCE": 327.00
+  },
+  "AGRONOMICA": {
+      "MIRIM DOCE": 132.00
+  },
+  "AGROLANDIA": {
+      "MIRIM DOCE": 76.50,
+      "SALETE": 106.50
+  }
+}
