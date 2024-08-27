@@ -47,10 +47,14 @@
 
     <div class="container">
         <h2>Executar Dijkstra</h2>
+        <div class="form-group">
         <label for="startVertex">Vértice Inicial:</label>
-        <input type="text" id="startVertex">
+        <select id="startVertex" class="form-control"></select>
+    </div>
+        <div class="form-group">
         <label for="endVertex">Vértice Final:</label>
-        <input type="text" id="endVertex">
+        <select id="endVertex" class="form-control"></select>
+    </div>
         <button onclick="executarDijkstra()">Executar</button>
     </div>
 

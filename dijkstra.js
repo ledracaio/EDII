@@ -165,7 +165,7 @@ function executarDijkstra() {
     }
 }
 
-function atualizarListaVertices() {
+/*function atualizarListaVertices() {
     const listaVertices = document.getElementById('vertexList');
     listaVertices.innerHTML = '';
     for (const vertice in grafo.vertices) {
@@ -173,7 +173,36 @@ function atualizarListaVertices() {
         li.textContent = vertice;
         listaVertices.appendChild(li);
     }
+}*/
+function atualizarListaVertices() {
+    const listaVertices = document.getElementById('vertexList');
+    const startVertexSelect = document.getElementById('startVertex');
+    const endVertexSelect = document.getElementById('endVertex');
+
+    listaVertices.innerHTML = '';
+    startVertexSelect.innerHTML = '';
+    endVertexSelect.innerHTML = '';
+
+    for (const vertice in grafo.vertices) {
+        // Update vertices list
+        const li = document.createElement('li');
+        li.textContent = vertice;
+        listaVertices.appendChild(li);
+
+        // Update startVertex select
+        const startOption = document.createElement('option');
+        startOption.value = vertice;
+        startOption.textContent = vertice;
+        startVertexSelect.appendChild(startOption);
+
+        // Update endVertex select
+        const endOption = document.createElement('option');
+        endOption.value = vertice;
+        endOption.textContent = vertice;
+        endVertexSelect.appendChild(endOption);
+    }
 }
+
 
 function atualizarListaArestas() {
     const listaArestas = document.getElementById('edgeList');
