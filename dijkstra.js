@@ -109,7 +109,6 @@ class FilaPrioridade {
     }
 }
 
-// Instância global de Grafo
 const grafo = new Grafo();
 
 function adicionarVertice() {
@@ -165,15 +164,6 @@ function executarDijkstra() {
     }
 }
 
-/*function atualizarListaVertices() {
-    const listaVertices = document.getElementById('vertexList');
-    listaVertices.innerHTML = '';
-    for (const vertice in grafo.vertices) {
-        const li = document.createElement('li');
-        li.textContent = vertice;
-        listaVertices.appendChild(li);
-    }
-}*/
 function atualizarListaVertices() {
     const listaVertices = document.getElementById('vertexList');
     const startVertexSelect = document.getElementById('startVertex');
@@ -184,18 +174,16 @@ function atualizarListaVertices() {
     endVertexSelect.innerHTML = '';
 
     for (const vertice in grafo.vertices) {
-        // Update vertices list
         const li = document.createElement('li');
         li.textContent = vertice;
         listaVertices.appendChild(li);
 
-        // Update startVertex select
         const startOption = document.createElement('option');
         startOption.value = vertice;
         startOption.textContent = vertice;
         startVertexSelect.appendChild(startOption);
 
-        // Update endVertex select
+
         const endOption = document.createElement('option');
         endOption.value = vertice;
         endOption.textContent = vertice;
