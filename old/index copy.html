@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <title>Algoritmo de Dijkstra</title>
+    <style>
+        /* Esconder todas as seções inicialmente */
+        .section {
+            display: none;
+        }
+        /* Mostrar a seção ativa */
+        .active {
+            display: block;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algoritmo de Dijkstra</h1>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('importExport')">Importar/Exportar Grafo</a></li>
+            <li><a href="#" onclick="showSection('addVertex')">Adicionar Vértice</a></li>
+            <li><a href="#" onclick="showSection('addEdge')">Adicionar Aresta</a></li>
+            <li><a href="#" onclick="showSection('executeDijkstra')">Executar Dijkstra</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seções de conteúdo -->
+    <div id="importExport" class="section active">
+        <h2>Importar/Exportar Grafo</h2>
+        <button class="importa" onclick="exportarGrafo()">Exportar Grafo</button>
+        <button class="importa"><label for="importFile" id="nao">Escolher Arquivo</label></button>
+        <input type="file" id="importFile">
+        <button class="importa" onclick="importarGrafo()">Importar Grafo</button>
+        <a href="https://docs.google.com/spreadsheets/d/1hbWstT-VbbGT2dvCekpQoBLaTRcAoHskhpJeQjf1Qbo/edit?usp=sharing" target="_blank">
+            <button class="importa">Visualizar Matrizes</button>
+        </a>
+    </div>
+
+    <div id="addVertex" class="section">
+        <h2>Adicionar Vértice</h2>
+        <label for="vertexName">Nome do Vértice:</label>
+        <input type="text" id="vertexName">
+        <button onclick="adicionarVertice()">Adicionar Vértice</button>
+
+        <details>
+            <summary><h2>Lista de Vértices</h2></summary>
+            <ul id="vertexList"></ul>
+        </details>
+    </div>
+
+    <div id="addEdge" class="section">
+        <h2>Adicionar Aresta</h2>
+        <div class="form-group">
+            <label for="fromVertex">Vértice De:</label>
+            <input type="text" id="fromVertex">
+            <label for="toVertex">Vértice Para:</label>
+            <input type="text" id="toVertex">
+            <label for="weight">Peso:</label>
+            <input type="number" id="weight" step="0.01">
+        </div>
+        <button onclick="adicionarAresta()">Adicionar Aresta</button>
+
+        <details>
+            <summary><h2>Lista de Arestas</h2></summary>
+            <ul id="edgeList"></ul>
+        </details>
+    </div>
+
+    <div id="executeDijkstra" class="section">
+        <h2>Executar Dijkstra</h2>
+        <div class="form-group">
+            <label for="startVertex">Vértice Inicial:</label>
+            <select id="startVertex" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label for="endVertex">Vértice Final:</label>
+            <select id="endVertex" class="form-control"></select>
+        </div>
+        <button onclick="executarDijkstra()">Executar</button>
+
+        <h2>Caminho Mais Curto</h2>
+        <pre id="shortestPath"></pre>
+
+        <h2>Resultados</h2>
+        <pre id="results"></pre>
+
+        <details>
+            <summary><h2>Todos os Caminhos</h2></summary>
+            <pre id="allPaths"></pre>
+        </details>
+    </div>
+
+    <script>
+        // Função para mostrar a seção selecionada e esconder as outras
+        function showSection(sectionId) {
+            // Esconder todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Mostrar a seção ativa
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Funções de exemplo (para ajustar de acordo com seu código real)
+        function exportarGrafo() {
+            console.log("Grafo exportado!");
+        }
+
+        function importarGrafo() {
+            console.log("Grafo importado!");
+        }
+    </script>
+    <script src="dijkstra.js"></script>
+</body>
+</html>

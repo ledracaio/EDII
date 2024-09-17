@@ -6,7 +6,7 @@ class Grafo {
     adicionarVertice(nome) {
         if (!this.vertices[nome]) {
             this.vertices[nome] = {};
-            atualizarListaVertices(); // Atualiza a lista de vértices após adicionar um vértice
+            atualizarListaVertices();
         }
     }
 
@@ -15,8 +15,8 @@ class Grafo {
             throw new Error('Ambos os vértices devem existir');
         }
         this.vertices[de][para] = peso;
-        this.vertices[para][de] = peso; // Remove esta linha se o grafo for dirigido
-        atualizarListaArestas(); // Atualiza a lista de arestas após adicionar uma aresta
+        this.vertices[para][de] = peso;
+        atualizarListaArestas();
     }
 
     dijkstra(inicio, fim) {
@@ -168,29 +168,31 @@ function atualizarListaVertices() {
     const listaVertices = document.getElementById('vertexList');
     const startVertexSelect = document.getElementById('startVertex');
     const endVertexSelect = document.getElementById('endVertex');
+    const fromVertexSelect = document.getElementById('fromVertex');
+    const toVertexSelect = document.getElementById('toVertex');
 
     listaVertices.innerHTML = '';
     startVertexSelect.innerHTML = '';
     endVertexSelect.innerHTML = '';
+    fromVertexSelect.innerHTML = '';
+    toVertexSelect.innerHTML = '';
 
     for (const vertice in grafo.vertices) {
         const li = document.createElement('li');
         li.textContent = vertice;
         listaVertices.appendChild(li);
 
-        const startOption = document.createElement('option');
-        startOption.value = vertice;
-        startOption.textContent = vertice;
-        startVertexSelect.appendChild(startOption);
-
-
-        const endOption = document.createElement('option');
-        endOption.value = vertice;
-        endOption.textContent = vertice;
-        endVertexSelect.appendChild(endOption);
+        const option = document.createElement('option');
+        option.value = vertice;
+        option.textContent = vertice;
+        
+        // Adicionar opções para todos os selects
+        startVertexSelect.appendChild(option.cloneNode(true));
+        endVertexSelect.appendChild(option.cloneNode(true));
+        fromVertexSelect.appendChild(option.cloneNode(true));
+        toVertexSelect.appendChild(option.cloneNode(true));
     }
 }
-
 
 function atualizarListaArestas() {
     const listaArestas = document.getElementById('edgeList');
